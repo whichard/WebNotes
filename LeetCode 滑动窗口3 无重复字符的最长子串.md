@@ -32,8 +32,10 @@
 输出: 3 
 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
 
-题解：可用int数组或者HashSet来保存出现过的字符，当出现重复字符时，将窗口lo位置右移且将对应字符从数组、Set移除
+题解：可用int数组或者HashSet来保存出现过的字符，当出现重复字符时，将窗口lo位置右移且将对应字符从数组、Set移除。
+使用Set的解法思路和操作更为简单，但是使用int数组的解法更为通用 -- 可以用于多个同类题目。这里我把两种解法都列举出来。
 ``` Java
+//基于Set的解法，逻辑更简单
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
@@ -43,6 +45,25 @@ class Solution {
                 set.add(s.charAt(hi++));
                 res = Math.max(res, hi - lo);
             } else set.remove(s.charAt(lo++));
+        }
+        return res;
+    }
+}
+```
+
+```Java
+//基于int数组的解法，该解法模板化，更通用
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if(s.length() < 2) return s.length();
+        int[] hash = new int[128];
+        int lo = 0, res = 0, cnt = 0;
+        for(int i = 0; i < s.length(); i++) {
+            if(hash[s.charAt(i)]++ == 0) cnt++;
+            while(hash[s.charAt(i)] > 1) {
+                if(--hash[s.charAt(lo++)] == 0) cnt--;  
+            }
+            res = Math.max(res, cnt);
         }
         return res;
     }
