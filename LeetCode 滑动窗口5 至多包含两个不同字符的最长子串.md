@@ -31,16 +31,14 @@
 
 ```Java
 public int lengthOfLongestSubstringTwoDistinct(String s) {
-    if (s == null || s.length() == 0) return 0;
-    char[] sArr = s.toCharArray();
-    int[] hash = new int[256];
-    int lo = 0, count = 0, result = 1;
+    if (s.length() == 0) return 0;
+    int[] hash = new int[128];
+    int lo = 0, cnt = 0, res = 1;
     for (int i = 0; i < sArr.length; ++r) {
-        hash[sArr[i]]++;
-        if (hash[sArr[i]] == 1) cnt++; 
+        if (++hash[s.charAt(i)] == 1) cnt++; 
         while (cnt > 2) 
-            if (--hash[sArr[lo++]] == 0) cnt--;
-        result = Math.max(res, i - lo + 1);
+            if (--hash[s.charAt(lo++)] == 0) cnt--;
+        res = Math.max(res, i - lo + 1);
     }
     return res;
 }
