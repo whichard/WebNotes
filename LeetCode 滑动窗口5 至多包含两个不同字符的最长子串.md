@@ -34,17 +34,14 @@ public int lengthOfLongestSubstringTwoDistinct(String s) {
     if (s == null || s.length() == 0) return 0;
     char[] sArr = s.toCharArray();
     int[] hash = new int[256];
-    int l = 0, count = 0, result = 1;
-    for (int r = 0; r < sArr.length; ++r) {
-        hash[sArr[r]]++;
-        if (hash[sArr[r]] == 1) count++; 
-        while (count > 2) {
-            hash[sArr[l]]--;
-            if (hash[sArr[l++]] == 0)
-                count--;
-        }
-        result = Math.max(result, r - l + 1);
+    int lo = 0, count = 0, result = 1;
+    for (int i = 0; i < sArr.length; ++r) {
+        hash[sArr[i]]++;
+        if (hash[sArr[i]] == 1) cnt++; 
+        while (cnt > 2) 
+            if (--hash[sArr[lo++]] == 0) cnt--;
+        result = Math.max(res, i - lo + 1);
     }
-    return result;
+    return res;
 }
 ```
