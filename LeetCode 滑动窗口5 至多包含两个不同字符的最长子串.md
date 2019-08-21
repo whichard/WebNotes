@@ -43,3 +43,22 @@ public int lengthOfLongestSubstringTwoDistinct(String s) {
     return res;
 }
 ```
+
+### 进阶 
+### [340. 至多包含 K 个不同字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/)
+此题如何使用了上一题的模板，则此处直接套用即可！把2改为k即可。
+```Java
+public int lengthOfLongestSubstringTwoDistinct(String s, int k) {
+    if (s.length() == 0) return 0;
+    int[] hash = new int[128];
+    int lo = 0, cnt = 0, res = 1;
+    for (int i = 0; i < sArr.length; ++r) {
+        if (++hash[s.charAt(i)] == 1) cnt++; 
+        while (cnt > k) 
+            if (--hash[s.charAt(lo++)] == 0) cnt--;
+        res = Math.max(res, i - lo + 1);
+    }
+    return res;
+}
+```
+
