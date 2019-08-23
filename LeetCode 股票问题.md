@@ -19,3 +19,23 @@ class Solution {
     }
 }
 ```
+
+### [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+题目：用一个数组表示股票每天的价格，数组的第i个数表示股票在第i天的价格。交易次数不限，但一次只能交易一支股票，也就是说手上最多只能持有一支股票，求最大收益。
+
+分析：贪心法。从前向后遍历数组，只要当天的价格高于前一天的价格，就算入收益。
+
+代码：时间O(n)，空间O(1)。
+
+```Java
+class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length < 2) return 0;
+        int res = 0;
+        for(int i = 1; i < prices.length; i++)
+            if(prices[i] > prices[i - 1]) res += prices[i] - prices[i - 1];
+        return res;
+    }
+}
+```
