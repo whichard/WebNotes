@@ -13,7 +13,7 @@
 | Ternary Search Tree            | 三叉树，每一个node有3个节点，兼具省空间和查询快的优点（[Ternary Search Tree](http://www.drdobbs.com/database/ternary-search-trees/184410528)） |
 | Finite State Transducers (FST) | 一种有限状态转移机，Lucene 4有开源实现，并大量使用           |
 
- FST在单term查询上可能相比hashmap并没有明显优势，甚至会慢一些。但是在范围，前缀搜索以及压缩率上都有明显的优势。
+ FST在单个term查询上可能相比hashmap并没有明显优势，甚至会慢一些。但是在范围，前缀搜索以及压缩率上都有明显的优势。
 
 FST = Trie + 有限状态机
 
