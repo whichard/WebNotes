@@ -17,7 +17,7 @@ redis 127.0.0.1:6379> SET name "runoob"
 OK
 redis 127.0.0.1:6379> GET name
 "runoob"
-```
+``` 
 
 Redis在string类型上会消耗较多内存，可以使用dict（hash表）压缩存储以降低内存耗用。
 
