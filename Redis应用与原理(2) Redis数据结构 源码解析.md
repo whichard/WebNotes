@@ -67,7 +67,7 @@ typedef struct redisObject ｛
 	void ptr*; //指向底层实现数据结构的指针
 	unsigned lru:22; //对象最后一次被命令程序访问的时间	
 //...
-｝robj;
+｝robj; 
 ```
 
 #### 对象编码
