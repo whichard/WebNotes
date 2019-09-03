@@ -147,11 +147,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * @author fuwei.deng
- * @date 2017年6月14日 下午3:10:36
- * @version 1.0.0
- */
+
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
@@ -230,11 +226,7 @@ import com.itopener.lock.redis.spring.boot.autoconfigure.annotations.RedisLock;
 import com.itopener.lock.redis.spring.boot.autoconfigure.annotations.RedisLock.LockFailAction;
 import com.itopener.lock.redis.spring.boot.autoconfigure.lock.DistributedLock;
 
-/**
- * @author fuwei.deng
- * @date 2017年6月14日 下午3:11:22
- * @version 1.0.0
- */
+
 @Aspect 
 @Configuration
 @ConditionalOnClass(DistributedLock.class)
