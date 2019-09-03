@@ -235,7 +235,7 @@ import com.itopener.lock.redis.spring.boot.autoconfigure.lock.DistributedLock;
  * @date 2017年6月14日 下午3:11:22
  * @version 1.0.0
  */
-@Aspect
+@Aspect 
 @Configuration
 @ConditionalOnClass(DistributedLock.class)
 @AutoConfigureAfter(DistributedLockAutoConfiguration.class)
