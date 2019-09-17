@@ -28,4 +28,4 @@ b) 使用密码加密一段握手消息，发送给浏览器。
 这里常用的加密算法：
 - 非对称加密算法：RSA，DSA/DSS 
 - 对称加密算法：AES，RC4，3DES 
-- HASH算法：MD5，SHA1，SHA256
+- HASH算法：MD5，SHA1，SHA256 
